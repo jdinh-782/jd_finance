@@ -55,12 +55,13 @@ export default function Spending() {
 
       <Box sx={{ maxWidth: 125, marginBottom: '5px' }}>
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Month</InputLabel>
+          <InputLabel id="month-select-label">Month</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
+            labelId="month-select-label"
+            id="month-simple-select"
             value={month}
             label="Month"
+            defaultValue={currentMonth}
             onChange={handleChange}
           >
             <MenuItem value={'January'}>January</MenuItem>
