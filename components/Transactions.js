@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Link from '@mui/material/Link';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -12,18 +11,19 @@ import Data from './Data';
 
 const data = Data;
 
-function createData(id, date, name, status, paymentMethod, amount) {
-  return { id, date, name, status, paymentMethod, amount };
+function createData(id, month, day, year, name, status, paymentMethod, amount) {
+  const date = month + "/" + day + "/" + year;
+  return {id, month, date, name, status, paymentMethod, amount};
 }
 
 let rows = [];
 let n_rows = 5;
 
 if ((data.length-1) < 5) {
-  n_rows = data.length - 1
+  n_rows = data.length
 }
-for (let i = 0; i < n_rows; i++) {
-  const d = createData(data[i].id, data[i].date, data[i].name, data[i].status, data[i].paymentMethod, data[i].amount);
+for (let i = (data.length-2); i >= (n_rows-1); i--) {
+  const d = createData(data[i].id, data[i].month, data[i].day, data[i].year, data[i].name, data[i].status, data[i].paymentMethod, data[i].amount);
   rows.push(d);
 }
 rows = rows.reverse();
@@ -33,7 +33,7 @@ rows = rows.reverse();
 export default function Transactions() {
   return (
     <React.Fragment>
-      <Title>All Transactions</Title>
+      <Title>Recent Transactions</Title>
       <Table size="small">
         <TableHead>
           <TableRow>

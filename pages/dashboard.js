@@ -22,6 +22,7 @@ import Spending from '../components/Spending';
 import Balance from '../components/Balance';
 import Transactions from '../components/Transactions';
 import Title from '../components/Title';
+import Investments from '../components/Investing';
 
 
 
@@ -220,6 +221,16 @@ function DashboardContent() {
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', width: 1230 }}>
                   <Transactions />
+                  <Link color="primary" href="/transactionsPage" sx={{ mt: 3 }}>
+                    See Past Transactions
+                  </Link>
+                </Paper>
+              </Grid>
+
+              {/* Investment Portfolio */}
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', width: 1230, height: 750 }}>
+                  <Investments />
                 </Paper>
               </Grid>
             </Grid>
