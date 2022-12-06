@@ -3,6 +3,9 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import DashboardIcon from '@mui/icons-material/Dashboard';
+import SavingsIcon from '@mui/icons-material/Savings';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import InfoIcon from '@mui/icons-material/Info';
 
 
 
@@ -17,21 +20,21 @@ export const mainListItems = (
 
     <ListItemButton href="/transactionsPage">
       <ListItemIcon>
-        <DashboardIcon />
+        <AccountBalanceIcon />
       </ListItemIcon>
       <ListItemText primary="Transactions" />
     </ListItemButton>
 
     <ListItemButton href="/investingPage">
       <ListItemIcon>
-        <DashboardIcon />
+        <SavingsIcon />
       </ListItemIcon>
       <ListItemText primary="Investing" />
     </ListItemButton>
 
     <ListItemButton href="/about">
       <ListItemIcon>
-        <DashboardIcon />
+        <InfoIcon />
       </ListItemIcon>
       <ListItemText primary="About" />
     </ListItemButton>
