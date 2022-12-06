@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
+import { LineChart, BarChart, CartesianGrid, Tooltip, Bar, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import { Paper, Typography, Box, InputLabel, MenuItem, FormControl, Select } from '@mui/material';
 import Title from './Title';
 import Data from './Data';
@@ -53,7 +53,7 @@ export default function Spending() {
     <React.Fragment>
       <Title>Spending - {month_name} {currentYear}</Title>
 
-      <Box sx={{ maxWidth: 125, marginBottom: '5px' }}>
+      <Box sx={{ maxWidth: 125, marginBottom: '10px' }}>
         <FormControl fullWidth>
           <InputLabel id="month-select-label">Month</InputLabel>
           <Select
@@ -79,7 +79,7 @@ export default function Spending() {
           </Select>
         </FormControl>
       </Box>      
-
+{/* 
       <ResponsiveContainer>
         <LineChart
           data={data}
@@ -120,6 +120,36 @@ export default function Spending() {
             dot={false}
           />
         </LineChart>
+      </ResponsiveContainer> */}
+      
+      <ResponsiveContainer>
+        <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 5, 
+            right: 30,
+            left: 20,
+            bottom: 5
+          }}
+          >
+            <CartesianGrid strokeDasharray="3" />
+            <XAxis dataKey="date"></XAxis>
+            <YAxis>
+              <Label
+                angle={270}
+                position="left"
+                style={{
+                  textAnchor: 'middle',
+                }}
+              >
+                Money Spent ($)
+              </Label>
+            </YAxis>
+            <Tooltip />
+            <Bar dataKey="amount" fill="#1976d2" label={{ position: 'top' }} />
+          </BarChart>
       </ResponsiveContainer>
 
       <Paper

@@ -166,7 +166,7 @@ function DashboardContent() {
                     p: 2,
                     display: 'flex',
                     flexDirection: 'column',
-                    height: 400,
+                    height: 500,
                   }}
                 >
                   <Spending />
