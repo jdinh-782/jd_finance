@@ -9,19 +9,14 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
-import Tooltip from '@mui/material/Tooltip';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { mainListItems } from '../components/list_items';
-import Spending from '../components/Spending';
-import Balance from '../components/Balance';
 import Transactions from '../components/Transactions';
-import Title from '../components/Title';
 
 
 
@@ -86,7 +81,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
+function TransactionsContent() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -121,7 +116,7 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Transactions
             </Typography>
           </Toolbar>
         </AppBar>
@@ -158,63 +153,6 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* Spending Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 400,
-                  }}
-                >
-                  <Spending />
-                </Paper>
-              </Grid>
-
-              {/* Current Balance */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 190,
-                    width: 350
-                  }}
-                >
-                <Title>Johnson Dinh</Title>
-                  <React.Fragment>
-                    <Typography component="p" variant="h6">
-                      Account Number:
-                      <Tooltip describeChild title="show account number" >
-                        <Button>Click to Show</Button>
-                      </Tooltip>
-                    </Typography>
-
-                    <Typography component="p" variant="h6">
-                      Routing Number:
-                      <Tooltip describeChild title="show routing number" >
-                        <Button>Click to Show</Button>
-                      </Tooltip>
-                    </Typography>
-                  </React.Fragment>
-                </Paper>
-                
-                <div style={{marginTop: '10px'}}></div>
-
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 200,
-                    width: 350
-                  }}
-                >
-                  <Balance/>
-                </Paper>
-              </Grid>
 
               {/* Recent Transactions */}
               <Grid item xs={12}>
@@ -231,6 +169,6 @@ function DashboardContent() {
   );
 }
 
-export default function Dashboard() {
-  return <DashboardContent />;
+export default function TransactionsPage() {
+  return <TransactionsContent />;
 }

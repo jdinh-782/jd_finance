@@ -29,14 +29,11 @@ for (let i = 0; i < n_rows; i++) {
 rows = rows.reverse();
 
 
-function preventDefault(event) {
-  event.preventDefault();
-}
 
 export default function Transactions() {
   return (
     <React.Fragment>
-      <Title>Recent Transactions</Title>
+      <Title>All Transactions</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
@@ -59,9 +56,6 @@ export default function Transactions() {
           ))}
         </TableBody>
       </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See Past Transactions
-      </Link>
     </React.Fragment>
   );
 }

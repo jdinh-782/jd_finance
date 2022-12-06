@@ -8,28 +8,28 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton>
+    <ListItemButton href="/">
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
 
-    <ListItemButton>
+    <ListItemButton href="/transactionsPage">
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Transactions" />
     </ListItemButton>
 
-    <ListItemButton>
+    <ListItemButton href="/investingPage">
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Investing" />
     </ListItemButton>
 
-    <ListItemButton>
+    <ListItemButton href="/about">
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
