@@ -151,7 +151,7 @@ const model = ref([
             {
                 label: 'View Source',
                 icon: 'pi pi-fw pi-search',
-                url: 'https://github.com/primefaces/sakai-vue',
+                url: 'https://github.com/jdinh-782/jd_finance',
                 target: '_blank'
             }
         ]
