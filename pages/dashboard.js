@@ -35,6 +35,12 @@ function Copyright(props) {
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
+
+      <br/>
+
+      {'Powered by '}
+      <Link color="inherit" href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app" target="_blank">
+      </Link>{' '}      
     </Typography>
   );
 }
@@ -222,7 +228,7 @@ function DashboardContent() {
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', width: 1230 }}>
                   <Transactions />
                   <Link color="primary" href="/transactionsPage" sx={{ mt: 3 }}>
-                    See Past Transactions
+                    See More Transactions
                   </Link>
                 </Paper>
               </Grid>

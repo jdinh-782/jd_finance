@@ -26,7 +26,6 @@ for (let i = (data.length-2); i >= (n_rows-1); i--) {
   const d = createData(data[i].id, data[i].month, data[i].day, data[i].year, data[i].name, data[i].status, data[i].paymentMethod, data[i].amount);
   rows.push(d);
 }
-rows = rows.reverse();
 
 
 

@@ -16,7 +16,28 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { mainListItems } from '../components/list_items';
-import Transactions from '../components/Transactions';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Data from '../components/Data';
+import Title from '../components/Title';
+
+
+
+const data = Data;
+
+function createData(id, month, day, year, name, status, paymentMethod, amount) {
+  const date = month + "/" + day + "/" + year;
+  return {id, month, date, name, status, paymentMethod, amount};
+}
+
+let rows = [];
+for (let i = (data.length-2); i >= 0; i--) {
+  const d = createData(data[i].id, data[i].month, data[i].day, data[i].year, data[i].name, data[i].status, data[i].paymentMethod, data[i].amount);
+  rows.push(d);
+}
 
 
 
@@ -154,10 +175,34 @@ function TransactionsContent() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
 
-              {/* Recent Transactions */}
+              {/* All Transactions */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', width: 1230 }}>
-                  <Transactions />
+                  <React.Fragment>
+                  <Title>All Transactions</Title>
+                  <Table size="small">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Date</TableCell>
+                        <TableCell>Name</TableCell>
+                        <TableCell>Status</TableCell>
+                        <TableCell>Payment Method</TableCell>
+                        <TableCell align="right">Purchase Amount</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {rows.map((row) => (
+                        <TableRow key={row.id}>
+                          <TableCell>{row.date}</TableCell>
+                          <TableCell>{row.name}</TableCell>
+                          <TableCell>{row.status}</TableCell>
+                          <TableCell>{row.paymentMethod}</TableCell>
+                          <TableCell align="right">{`$${row.amount}`}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                  </React.Fragment>
                 </Paper>
               </Grid>
             </Grid>
