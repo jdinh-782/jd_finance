@@ -16,6 +16,8 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { mainListItems } from '../components/list_items';
+import Title from '../components/Title';
+import { SiGithub, SiLinkedin } from "react-icons/si";
 
 
 
@@ -137,6 +139,51 @@ function AboutContent() {
             {mainListItems}
           </List>
         </Drawer>
+
+        <Box
+          component="main"
+          sx={{
+            backgroundColor: (theme) =>
+              theme.palette.mode === 'light'
+                ? theme.palette.grey[100]
+                : theme.palette.grey[900],
+            flexGrow: 1,
+            height: '100vh',
+            overflow: 'auto',
+          }}
+        >
+          <Toolbar />
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Grid container spacing={3}>
+              <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', width: 1230 }}>
+                <React.Fragment>
+                  <Title>About</Title>
+
+                  This system represents a visual representation of a user's spendings, investments, and transactions. A user
+                  should be able to view all their transactions and details along with how their money is being utilized. In
+                  the new age of technology, consumers will need to understand how to manage their assets and outline portions
+                  of their portfolio in order to stay financially independent. <br/> <br/>
+
+                  <div style={{ display: 'inline-block'}}>
+                    <a href="https://github.com/jdinh-782/jd_finance" target="_blank">
+                      <SiGithub size={'2em'}/>
+                    </a>
+                  </div>
+
+                  <div style={{ display: 'inline-block', textDecoration: 'none'}}>
+                    <a href="https://www.linkedin.com/in/johnson-dinh/" target="_blank">
+                      <SiLinkedin size={'2em'} />
+                    </a>
+                  </div>
+                  
+
+                </React.Fragment>
+              </Paper>
+            </Grid>
+
+          </Container>
+
+        </Box>
       </Box>
     </ThemeProvider>
   );
