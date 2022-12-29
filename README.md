@@ -1,11 +1,9 @@
 # Website
 JD Finance
 
-[insert website image here]
-
 
 ## Description
-A program to visualize a user's spendings and investments along with managing their account balances. 
+A system built to visualize a user's spendings and investments along with managing their account balances. 
 
 
 ## Getting Started
